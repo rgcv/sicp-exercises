@@ -3,7 +3,7 @@
 ; by the value of (x/y² + 2y) / 3. Use this formula to implement a cube-root
 ; procedure analogous to the square-root procedure.
 
-(load "square")
+(load "square.scm")
 (define (improve guess x)
   (/ (+ (/ x (square guess))
         (* 2 guess))
