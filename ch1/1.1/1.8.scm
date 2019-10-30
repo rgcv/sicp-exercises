@@ -11,7 +11,7 @@
 
 (define (good-enough? guess next)
   (< (abs (- guess next))
-     (* 1.0e-20 guess)))
+     (* 1.0e-20 next)))
 
 (define (cbrt-iter guess x)
   (let ((next (improve guess x)))
