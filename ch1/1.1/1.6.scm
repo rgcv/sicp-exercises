@@ -1,4 +1,4 @@
-; Exercise 1.6: Alyssa P. Hacker doesn't see why if needs to be provided as a
+; Exercise 1.6: Alyssa P. Hacker doesn't see why `if` needs to be provided as a
 ; special form. "Why can't I just define it as an ordinary procedure in terms of
 ; `cond`?" she asks. Alyssa's friend Eva Lu Ator claims this can indeed be done,
 ; and she defines a new version of `if`:
@@ -24,9 +24,10 @@
 ; What happens when Alyssa attempts to use this to compute square roots?
 ; Explain.
 
-; A: Using applicative-order evaluation, every argument of a procedure is
-; evaluated first, meaning the recursive call to the `sqrt-iter` procedure would
-; expand, requiring further evaluation, and so on. This would result in an
-; infinite recursion, effectively stumping the process of square root
-; computation. This is why the `if`-clause *must* be a special form.
+; A: Under applicative-order evaluation, every argument of a procedure is
+; evaluated before invoking the procedure, meaning the recursive call to the
+; `sqrt-iter` procedure would expand, requiring further evaluation, and so on.
+; This would result in an infinite recursion, effectively stumping the process
+; of square root computation. This is why the `if`-clause *must* be a special
+; form.
 

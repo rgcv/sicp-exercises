@@ -19,9 +19,9 @@
 ; expression.)
 
 ; A: Applicative-order: endless recursion.
-; A call to a procedure only expands after its arguments have all be evaluated.
-; Alas, `(p)` recursively evaluates to `(p)`, leaving the evaluator stuck in a
-; loop calling the procedure `p`.
+; A call to a procedure only expands after its arguments have all been
+; evaluated.  Alas, `(p)` recursively evaluates to `(p)`, leaving the evaluator
+; stuck in a loop calling the procedure `p`.
 (test 0 (p))
 (test 0 (p))
 (test 0 (p))
@@ -30,8 +30,9 @@
 ; Since operands are only evaluated once their values are needed, `(p)` won't be
 ; evaluated until then, first expanding the call to `test`. This leaves us with
 ; an `if`-clause, a special form that only evaluates the expression based on the
-; condition's result. Since, in this case, it is true, we have no need to
-; evaluate the call to `p`, producing the value `0`.
+; condition's result. Since, in this case, the condition holds, we have no need
+; to evaluate the call to `p` (i.e. the alternative), producing the value `0`
+; (i.e. the consequent).
 (test 0 (p))
 (if (= 0 0) 0 (p))
 0
